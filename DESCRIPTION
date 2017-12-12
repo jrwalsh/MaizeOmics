@@ -1,0 +1,12 @@
+Package: MaizeOmics
+Type: Package
+Title: Container for Maize Expression and Protein Abundance Data
+Version: 0.1.0
+Author: Jesse R. Walsh
+Maintainer: Jesse R. Walsh <jesse@iastate.edu>
+Description: This is a collection of public maize omics data I commonly use.
+    This package uses readr, readxl, tidyr, and dplyr.
+License: See original sources
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
