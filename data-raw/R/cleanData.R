@@ -55,30 +55,6 @@ maize.kaeppler.expression.clean <-
 ## Remove low FPKM values
 maize.kaeppler.expression.clean[maize.kaeppler.expression.clean < 1] <- NA
 
-#==================================================================================================#
-## maize.genes.v3_to_v4_map.raw
-#--------------------------------------------------------------------------------------------------#
-maize.genes.v3_to_v4_map.clean <- maize.genes.v3_to_v4_map.raw
-
-maize.genes.v3_to_v4_map.clean <-
-  maize.genes.v3_to_v4_map.clean %>%
-  rename(v3_id = `v3 gene ID`, v4_id = `v4 gene ID (if present)`) %>%
-  select(v3_id, v4_id)
-
-maize.genes.v3_to_v4_map.clean$v3_id[maize.genes.v3_to_v4_map.clean$v3_id == "na"] <- NA
-maize.genes.v3_to_v4_map.clean$v4_id[maize.genes.v3_to_v4_map.clean$v4_id == "na"] <- NA
-
-maize.genes.v3_to_v4_map.clean$v3_id[startsWith(maize.genes.v3_to_v4_map.clean$v3_id, "AF")] <- NA
-maize.genes.v3_to_v4_map.clean$v3_id[startsWith(maize.genes.v3_to_v4_map.clean$v3_id, "AY")] <- NA
-maize.genes.v3_to_v4_map.clean$v3_id[startsWith(maize.genes.v3_to_v4_map.clean$v3_id, "EF")] <- NA
-maize.genes.v3_to_v4_map.clean$v3_id[startsWith(maize.genes.v3_to_v4_map.clean$v3_id, "zma")] <- NA
-maize.genes.v3_to_v4_map.clean$v4_id[startsWith(maize.genes.v3_to_v4_map.clean$v4_id, "zma")] <- NA
-maize.genes.v3_to_v4_map.clean$v4_id[maize.genes.v3_to_v4_map.clean$v4_id == "not in v4"] <- NA
-
-maize.genes.v3_to_v4_map.clean <-
-  maize.genes.v3_to_v4_map.clean %>%
-  filter(!is.na(v3_id) & !is.na(v4_id))
-
 #--------------------------------------------------------------------------------------------------#
 detach("package:tidyr", unload=TRUE)
 detach("package:dplyr", unload=TRUE)

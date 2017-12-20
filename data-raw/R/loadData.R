@@ -8,7 +8,6 @@
 ##        maize.walley.abundance.raw
 ##        experiment.map.proteins
 ##        maize.kaeppler.expression.raw
-##        maize.genes.v3_to_v4_map.raw
 ##
 ## Date: 2017-08-25
 ## Author: Jesse R. Walsh
@@ -26,9 +25,6 @@ experiment.map.proteins <- read_delim("./data-raw/walley2016/experiment_map_prot
 
 ## Expression data from the Kaeppler 2015 paper in FPKM for 79 tissues
 maize.kaeppler.expression.raw <- read_delim("./data-raw/kaeppler2015/Dataset S1.txt", "\t", trim_ws = TRUE)
-
-## Mapping data provided by Maggie, based on synteny from SynMap
-maize.genes.v3_to_v4_map.raw <- read_xlsx("./data-raw/MaizeGDB_v3_v4.genes.xlsx")
 
 #--------------------------------------------------------------------------------------------------#
 detach("package:readr", unload=TRUE)

@@ -23,41 +23,47 @@ library(dplyr)
 maize.walley.expression.replicate <- maize.walley.expression.clean
 
 ## Convert to v4 ids
-maize.walley.expression.replicate <-
-  maize.walley.expression.replicate %>%
-  inner_join(maize.genes.v3_to_v4_map.clean, by=c("tracking_id" = "v3_id")) %>%
-  rename(geneID=v4_id)
+# maize.walley.expression.replicate <-
+#   maize.walley.expression.replicate %>%
+#   # inner_join(maize.genes.v3_to_v4_map.clean, by=c("tracking_id" = "v3_id")) %>%
+#   rename(geneID=tracking_id)
 
-## Reorder columns
-maize.walley.expression.replicate <- maize.walley.expression.replicate[,c(70,2:69)]
+# ## Reorder columns
+# maize.walley.expression.replicate <- maize.walley.expression.replicate[,c(70,2:69)]
 
-## Merge duplicate rows by adding FPKM values together
+# ## Merge duplicate rows by adding FPKM values together
+# maize.walley.expression.replicate <-
+#   maize.walley.expression.replicate %>%
+#   group_by(geneID) %>%
+#   summarise_all(funs(sum))
+
+## Rename columns based on tracking id
 maize.walley.expression.replicate <-
-  maize.walley.expression.replicate %>%
-  group_by(geneID) %>%
-  summarise_all(funs(sum))
+  setNames(maize.walley.expression.replicate,
+           c("geneID", experiment.map$replicate[match(names(maize.walley.expression.replicate[-1]),experiment.map$tracking_id)]))
 
 #==================================================================================================#
 ## maize.walley.expression
 #--------------------------------------------------------------------------------------------------#
 maize.walley.expression <- maize.walley.expression.clean
 
-## Convert to v4 ids
-maize.walley.expression <-
-  maize.walley.expression %>%
-  inner_join(maize.genes.v3_to_v4_map.clean, by=c("tracking_id" = "v3_id")) %>%
-  rename(geneID=v4_id)
-
-## Reorder columns
-maize.walley.expression <- maize.walley.expression[,c(70,2:69)]
+# ## Convert to v4 ids
+# maize.walley.expression <-
+#   maize.walley.expression %>%
+#   inner_join(maize.genes.v3_to_v4_map.clean, by=c("tracking_id" = "v3_id")) %>%
+#   rename(geneID=v4_id)
+#
+# ## Reorder columns
+# maize.walley.expression <- maize.walley.expression[,c(70,2:69)]
 
 ## convert to sample names, merge replicates in each sample using mean, and output in long form
 maize.walley.expression <-
   maize.walley.expression %>%
+  rename(geneID=tracking_id) %>%
   gather("tracking_id", "FPKM",-1) %>%
   left_join(experiment.map, by=c("tracking_id"="tracking_id")) %>%
-  select(geneID, Sample, FPKM) %>%
-  group_by(geneID, Sample) %>%
+  select(geneID, sample, FPKM) %>%
+  group_by(geneID, sample) %>%
   summarise(FPKM_avg=mean(FPKM, na.rm=TRUE)) %>%
   arrange(geneID)
 
@@ -72,30 +78,29 @@ maize.walley.abundance <- maize.walley.abundance.clean
 ## Convert to v4 ids
 maize.walley.abundance <-
   maize.walley.abundance %>%
-  inner_join(maize.genes.v3_to_v4_map.clean, by=c("v3_id" = "v3_id")) %>%
-  rename(geneID=v4_id)
+  # inner_join(maize.genes.v3_to_v4_map.clean, by=c("v3_id" = "v3_id")) %>%
+  rename(geneID=v3_id)
 
-## Reorder columns
-maize.walley.abundance <- maize.walley.abundance[,c(length(maize.walley.abundance),3:length(maize.walley.abundance)-1)]
+# ## Reorder columns
+# maize.walley.abundance <- maize.walley.abundance[,c(length(maize.walley.abundance),3:length(maize.walley.abundance)-1)]
 
 ## Reduce columns to only the ones comparable to expression data
-colsToKeep <- colnames(maize.walley.abundance) %in% c("geneID",experiment.map.proteins$Replicate[!is.na(experiment.map.proteins$ExpressionSampleName)])
+colsToKeep <- colnames(maize.walley.abundance) %in% c("geneID",experiment.map.proteins$replicate[!is.na(experiment.map.proteins$expressionSampleName)])
 maize.walley.abundance <- maize.walley.abundance[,colsToKeep]
 
 ## convert to sample names using the same terms used in expression set, merge replicates in each sample using mean, and output in long form
 maize.walley.abundance <-
   maize.walley.abundance %>%
-  gather("Replicate", "dNSAF",-1) %>%
-  left_join(experiment.map.proteins, by=c("Replicate"="Replicate")) %>%
-  select(geneID, ExpressionSampleName, dNSAF) %>%
-  group_by(geneID, ExpressionSampleName) %>%
+  gather("replicate", "dNSAF",-1) %>%
+  left_join(experiment.map.proteins, by=c("replicate"="replicate")) %>%
+  select(geneID, expressionSampleName, dNSAF) %>%
+  group_by(geneID, expressionSampleName) %>%
   summarise(dNSAF_avg=mean(dNSAF, na.rm=TRUE)) %>%
-  rename(Sample=ExpressionSampleName) %>%
+  rename(sample=expressionSampleName) %>%
   arrange(geneID)
 
 ## When all replicates have NA, mean returns NaN.  Convert it back to NA.
 maize.walley.abundance$dNSAF_avg[is.nan(maize.walley.abundance$dNSAF_avg)] <- NA
-
 
 #==================================================================================================#
 ## maize.kaeppler.expression.replicate
@@ -105,17 +110,17 @@ maize.kaeppler.expression.replicate <- maize.kaeppler.expression.clean
 ## Convert to v4 ids
 maize.kaeppler.expression.replicate <-
   maize.kaeppler.expression.replicate %>%
-  inner_join(maize.genes.v3_to_v4_map.clean, by=c("Maize_AGPv2_gene" = "v3_id")) %>%
-  rename(geneID=v4_id)
+  # inner_join(maize.genes.v3_to_v4_map.clean, by=c("Maize_AGPv2_gene" = "v3_id")) %>%
+  rename(geneID=Maize_AGPv2_gene)
 
-## Reorder columns
-maize.kaeppler.expression.replicate <- maize.kaeppler.expression.replicate[,c(81,2:80)]
+# ## Reorder columns
+# maize.kaeppler.expression.replicate <- maize.kaeppler.expression.replicate[,c(81,2:80)]
 
-## Merge duplicate rows by adding FPKM values together
-maize.kaeppler.expression.replicate <-
-  maize.kaeppler.expression.replicate %>%
-  group_by(geneID) %>%
-  summarise_all(funs(sum))
+# ## Merge duplicate rows by adding FPKM values together
+# maize.kaeppler.expression.replicate <-
+#   maize.kaeppler.expression.replicate %>%
+#   group_by(geneID) %>%
+#   summarise_all(funs(sum))
 
 #==================================================================================================#
 ## maize.kaeppler.expression
@@ -125,19 +130,22 @@ maize.kaeppler.expression <- maize.kaeppler.expression.clean
 ## Convert to v4 ids
 maize.kaeppler.expression <-
   maize.kaeppler.expression %>%
-  inner_join(maize.genes.v3_to_v4_map.clean, by=c("Maize_AGPv2_gene" = "v3_id")) %>%
-  rename(geneID=v4_id)
+  # inner_join(maize.genes.v3_to_v4_map.clean, by=c("Maize_AGPv2_gene" = "v3_id")) %>%
+  rename(geneID=Maize_AGPv2_gene)
 
-## Reorder columns
-maize.kaeppler.expression <- maize.kaeppler.expression[,c(81,2:80)]
+# ## Reorder columns
+# maize.kaeppler.expression <- maize.kaeppler.expression[,c(81,2:80)]
 
 ## Output in long form
 maize.kaeppler.expression <-
   maize.kaeppler.expression %>%
-  gather("Sample", "FPKM",-1) %>%
-  group_by(geneID, Sample) %>%
+  gather("sample", "FPKM",-1) %>%
+  group_by(geneID, sample) %>%
   summarise(FPKM_avg=mean(FPKM, na.rm=TRUE)) %>%
   arrange(geneID)
+
+## When all replicates have NA, mean returns NaN.  Convert it back to NA.
+maize.kaeppler.expression$FPKM_avg[is.nan(maize.kaeppler.expression$FPKM_avg)] <- NA
 
 #==================================================================================================#
 ## Save the output to /data
