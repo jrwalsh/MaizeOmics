@@ -1,69 +1,69 @@
-Run	BioSample	Sample name	MBases	MBytes	Experiment	source name	tissue
-SRR957415	SAMN02334471	GSM1215320	3240	2141	SRX339756	endosperm 12 days after pollination	endosperm 12 days after pollination
-SRR957416	SAMN02334440	GSM1215321	3161	2090	SRX339757	endosperm 12 days after pollination	endosperm 12 days after pollination
-SRR957417	SAMN02334441	GSM1215322	3301	2186	SRX339758	endosperm 12 days after pollination	endosperm 12 days after pollination
-SRR957418	SAMN02334475	GSM1215323	2089	1463	SRX339759	pericarp and aleurone	pericarp and aleurone
-SRR957419	SAMN02334442	GSM1215324	2017	1410	SRX339760	pericarp and aleurone	pericarp and aleurone
-SRR957420	SAMN02334467	GSM1215325	1444	1004	SRX339761	pericarp and aleurone	pericarp and aleurone
-SRR957421	SAMN02334473	GSM1215326	1952	1357	SRX339762	endosperm crown	endosperm crown
-SRR957422	SAMN02334445	GSM1215327	2141	1492	SRX339763	endosperm crown	endosperm crown
-SRR957423	SAMN02334448	GSM1215328	2591	1829	SRX339764	endosperm crown	endosperm crown
-SRR957424	SAMN02334474	GSM1215329	2533	1755	SRX339765	symmetrical division zone	symmetrical division zone
-SRR957425	SAMN02334443	GSM1215330	2268	1572	SRX339766	symmetrical division zone	symmetrical division zone
-SRR957426	SAMN02334451	GSM1215331	2233	1548	SRX339767	symmetrical division zone	symmetrical division zone
-SRR957427	SAMN02334482	GSM1215332	2133	1479	SRX339768	stomatal division zone	stomatal division zone
-SRR957428	SAMN02334444	GSM1215333	2023	1406	SRX339769	stomatal division zone	stomatal division zone
-SRR957429	SAMN02334446	GSM1215334	2179	1511	SRX339770	stomatal division zone	stomatal division zone
-SRR957430	SAMN02334477	GSM1215335	2334	1616	SRX339771	growth zone	growth zone
-SRR957431	SAMN02334447	GSM1215336	2454	1703	SRX339772	growth zone	growth zone
-SRR957432	SAMN02334458	GSM1215337	1821	1254	SRX339773	growth zone	growth zone
-SRR957433	SAMN02334483	GSM1215338	3180	2105	SRX339774	embryos 20 days after pollination	embryos 20 days after pollination
-SRR957434	SAMN02334449	GSM1215339	3208	2115	SRX339775	embryos 20 days after pollination	embryos 20 days after pollination
-SRR957435	SAMN02334452	GSM1215340	3239	2145	SRX339776	embryos 20 days after pollination	embryos 20 days after pollination
-SRR957436	SAMN02334476	GSM1215341	1779	1243	SRX339777	embryos	embryos
-SRR957437	SAMN02334450	GSM1215342	1871	1293	SRX339778	embryos	embryos
-SRR957438	SAMN02334457	GSM1215343	2139	1481	SRX339779	embryos	embryos
-SRR957439	SAMN02334478	GSM1215344	2166	1493	SRX339780	germinating kernels	germinating kernels
-SRR957440	SAMN02334465	GSM1215345	2225	1529	SRX339781	germinating kernels	germinating kernels
-SRR957441	SAMN02334453	GSM1215346	4392	3032	SRX339782	germinating kernels	germinating kernels
-SRR957442	SAMN02334466	GSM1215347	1948	1334	SRX339783	mature leaf tissue (leaf 8)	mature leaf tissue (leaf 8)
-SRR957443	SAMN02334484	GSM1215348	2518	1731	SRX339784	mature leaf tissue (leaf 8)	mature leaf tissue (leaf 8)
-SRR957444	SAMN02334463	GSM1215349	2090	1435	SRX339785	mature leaf tissue (leaf 8)	mature leaf tissue (leaf 8)
-SRR957445	SAMN02334479	GSM1215350	2598	1790	SRX339786	6-8 mm from tip of ear primordium	6-8 mm from tip of ear primordium
-SRR957446	SAMN02334468	GSM1215351	2313	1589	SRX339787	6-8 mm from tip of ear primordium	6-8 mm from tip of ear primordium
-SRR957447	SAMN02334460	GSM1215352	1687	1154	SRX339788	6-8 mm from tip of ear primordium	6-8 mm from tip of ear primordium
-SRR957448	SAMN02334480	GSM1215353	2550	1744	SRX339789	2-4 mm from tip of ear primordium	2-4 mm from tip of ear primordium
-SRR957449	SAMN02334462	GSM1215354	2590	1776	SRX339790	2-4 mm from tip of ear primordium	2-4 mm from tip of ear primordium
-SRR957450	SAMN02334496	GSM1215355	2793	1927	SRX339791	2-4 mm from tip of ear primordium	2-4 mm from tip of ear primordium
-SRR957451	SAMN02334507	GSM1215356	2375	1633	SRX339792	Root maturation zone	Root maturation zone
-SRR957452	SAMN02334494	GSM1215357	2393	1649	SRX339793	Root elongation zone	Root elongation zone
-SRR957453	SAMN02334498	GSM1215358	2242	1539	SRX339794	Root cortex	Root cortex
-SRR957454	SAMN02334506	GSM1215359	2520	1718	SRX339795	Root maturation zone	Root maturation zone
-SRR957455	SAMN02334497	GSM1215360	2019	1393	SRX339796	Root elongation zone	Root elongation zone
-SRR957456	SAMN02334499	GSM1215361	2271	1550	SRX339797	Root cortex	Root cortex
-SRR957457	SAMN02334505	GSM1215362	2406	1646	SRX339798	Root maturation zone	Root maturation zone
-SRR957458	SAMN02334492	GSM1215363	2202	1507	SRX339799	Root elongation zone	Root elongation zone
-SRR957459	SAMN02334495	GSM1215364	1533	1034	SRX339800	Root cortex	Root cortex
-SRR957460	SAMN02334504	GSM1215365	2653	1842	SRX339801	Primary root	Primary root
-SRR957461	SAMN02334493	GSM1215366	2512	1741	SRX339802	Primary root	Primary root
-SRR957462	SAMN02334488	GSM1215367	2646	1828	SRX339803	Primary root	Primary root
-SRR957463	SAMN02334503	GSM1215368	2425	1675	SRX339804	Secondary root	Secondary root
-SRR957464	SAMN02334489	GSM1215369	2641	1820	SRX339805	Secondary root	Secondary root
-SRR957465	SAMN02334490	GSM1215370	2815	1933	SRX339806	Secondary root	Secondary root
-SRR957466	SAMN02334502	GSM1215371	2924	2035	SRX339807	Mature pollen	Mature pollen
-SRR957467	SAMN02334487	GSM1215372	2852	1978	SRX339808	Mature pollen	Mature pollen
-SRR957468	SAMN02334491	GSM1215373	2907	2007	SRX339809	Mature pollen	Mature pollen
-SRR957469	SAMN02334500	GSM1215374	2482	1704	SRX339810	silks	silks
-SRR957470	SAMN02334486	GSM1215375	2083	1411	SRX339811	silks	silks
-SRR957471	SAMN02334469	GSM1215376	1374	918	SRX339812	silks	silks
-SRR957472	SAMN02334501	GSM1215377	1691	1123	SRX339813	mature female spikelets	mature female spikelets
-SRR957473	SAMN02334485	GSM1215378	1968	1326	SRX339814	mature female spikelets	mature female spikelets
-SRR957474	SAMN02334461	GSM1215379	2206	1502	SRX339815	mature female spikelets	mature female spikelets
-SRR957475	SAMN02334481	GSM1215380	2436	1653	SRX339816	Internode 6-7	Internode 6-7
-SRR957476	SAMN02334454	GSM1215381	2344	1595	SRX339817	Internode 6-7	Internode 6-7
-SRR957477	SAMN02334459	GSM1215382	2569	1752	SRX339818	Internode 6-7	Internode 6-7
-SRR957478	SAMN02334470	GSM1215383	2372	1611	SRX339819	Internode 7-8	Internode 7-8
-SRR957479	SAMN02334455	GSM1215384	2138	1452	SRX339820	Internode 7-8	Internode 7-8
-SRR957480	SAMN02334464	GSM1215385	2645	1800	SRX339821	Internode 7-8	Internode 7-8
-SRR957481	SAMN02334472	GSM1215386	2660	1794	SRX339822	Vegetative Meristem & Surrounding Tissue	Vegetative Meristem & Surrounding Tissue
-SRR957482	SAMN02334456	GSM1215387	2677	1814	SRX339823	Vegetative Meristem & Surrounding Tissue	Vegetative Meristem & Surrounding Tissue
+Run	BioSample	Sample name	MBases	MBytes	Experiment	source name	tissue	sample	replicate
+SRR957415	SAMN02334471	GSM1215320	3240	2141	SRX339756	endosperm 12 days after pollination	endosperm 12 days after pollination	Endosperm 12 DAP	Endosperm 12 DAP_1
+SRR957416	SAMN02334440	GSM1215321	3161	2090	SRX339757	endosperm 12 days after pollination	endosperm 12 days after pollination	Endosperm 12 DAP	Endosperm 12 DAP_2
+SRR957417	SAMN02334441	GSM1215322	3301	2186	SRX339758	endosperm 12 days after pollination	endosperm 12 days after pollination	Endosperm 12 DAP	Endosperm 12 DAP_3
+SRR957418	SAMN02334475	GSM1215323	2089	1463	SRX339759	pericarp and aleurone	pericarp and aleurone	Pericarp/Aleurone 27 DAP	Pericarp/Aleurone 27 DAP_1
+SRR957419	SAMN02334442	GSM1215324	2017	1410	SRX339760	pericarp and aleurone	pericarp and aleurone	Pericarp/Aleurone 27 DAP	Pericarp/Aleurone 27 DAP_2
+SRR957420	SAMN02334467	GSM1215325	1444	1004	SRX339761	pericarp and aleurone	pericarp and aleurone	Pericarp/Aleurone 27 DAP	Pericarp/Aleurone 27 DAP_3
+SRR957421	SAMN02334473	GSM1215326	1952	1357	SRX339762	endosperm crown	endosperm crown	Endosperm Crown 27 DAP	Endosperm Crown 27 DAP_1
+SRR957422	SAMN02334445	GSM1215327	2141	1492	SRX339763	endosperm crown	endosperm crown	Endosperm Crown 27 DAP	Endosperm Crown 27 DAP_2
+SRR957423	SAMN02334448	GSM1215328	2591	1829	SRX339764	endosperm crown	endosperm crown	Endosperm Crown 27 DAP	Endosperm Crown 27 DAP_3
+SRR957424	SAMN02334474	GSM1215329	2533	1755	SRX339765	symmetrical division zone	symmetrical division zone	Leaf Zone 1 (Symmetrical)	Leaf Zone 1 (Symmetrical)_1
+SRR957425	SAMN02334443	GSM1215330	2268	1572	SRX339766	symmetrical division zone	symmetrical division zone	Leaf Zone 1 (Symmetrical)	Leaf Zone 1 (Symmetrical)_2
+SRR957426	SAMN02334451	GSM1215331	2233	1548	SRX339767	symmetrical division zone	symmetrical division zone	Leaf Zone 1 (Symmetrical)	Leaf Zone 1 (Symmetrical)_3
+SRR957427	SAMN02334482	GSM1215332	2133	1479	SRX339768	stomatal division zone	stomatal division zone	Leaf Zone 2 (Stomatal)	Leaf Zone 2 (Stomatal)_1
+SRR957428	SAMN02334444	GSM1215333	2023	1406	SRX339769	stomatal division zone	stomatal division zone	Leaf Zone 2 (Stomatal)	Leaf Zone 2 (Stomatal)_2
+SRR957429	SAMN02334446	GSM1215334	2179	1511	SRX339770	stomatal division zone	stomatal division zone	Leaf Zone 2 (Stomatal)	Leaf Zone 2 (Stomatal)_3
+SRR957430	SAMN02334477	GSM1215335	2334	1616	SRX339771	growth zone	growth zone	Leaf Zone 3 (Growth)	Leaf Zone 3 (Growth)_1
+SRR957431	SAMN02334447	GSM1215336	2454	1703	SRX339772	growth zone	growth zone	Leaf Zone 3 (Growth)	Leaf Zone 3 (Growth)_2
+SRR957432	SAMN02334458	GSM1215337	1821	1254	SRX339773	growth zone	growth zone	Leaf Zone 3 (Growth)	Leaf Zone 3 (Growth)_3
+SRR957433	SAMN02334483	GSM1215338	3180	2105	SRX339774	embryos 20 days after pollination	embryos 20 days after pollination	Embryo 20 DAP	Embryo 20 DAP_1
+SRR957434	SAMN02334449	GSM1215339	3208	2115	SRX339775	embryos 20 days after pollination	embryos 20 days after pollination	Embryo 20 DAP	Embryo 20 DAP_2
+SRR957435	SAMN02334452	GSM1215340	3239	2145	SRX339776	embryos 20 days after pollination	embryos 20 days after pollination	Embryo 20 DAP	Embryo 20 DAP_3
+SRR957436	SAMN02334476	GSM1215341	1779	1243	SRX339777	embryos	embryos	Embryo 38 DAP	Embryo 38 DAP_1
+SRR957437	SAMN02334450	GSM1215342	1871	1293	SRX339778	embryos	embryos	Embryo 38 DAP	Embryo 38 DAP_2
+SRR957438	SAMN02334457	GSM1215343	2139	1481	SRX339779	embryos	embryos	Embryo 38 DAP	Embryo 38 DAP_3
+SRR957439	SAMN02334478	GSM1215344	2166	1493	SRX339780	germinating kernels	germinating kernels	Germinatin Kernels 2 DAI	Germinatin Kernels 2 DAI_1
+SRR957440	SAMN02334465	GSM1215345	2225	1529	SRX339781	germinating kernels	germinating kernels	Germinatin Kernels 2 DAI	Germinatin Kernels 2 DAI_2
+SRR957441	SAMN02334453	GSM1215346	4392	3032	SRX339782	germinating kernels	germinating kernels	Germinatin Kernels 2 DAI	Germinatin Kernels 2 DAI_3
+SRR957442	SAMN02334466	GSM1215347	1948	1334	SRX339783	mature leaf tissue (leaf 8)	mature leaf tissue (leaf 8)	Mature Leaf 8	Mature Leaf 8_1
+SRR957443	SAMN02334484	GSM1215348	2518	1731	SRX339784	mature leaf tissue (leaf 8)	mature leaf tissue (leaf 8)	Mature Leaf 8	Mature Leaf 8_2
+SRR957444	SAMN02334463	GSM1215349	2090	1435	SRX339785	mature leaf tissue (leaf 8)	mature leaf tissue (leaf 8)	Mature Leaf 8	Mature Leaf 8_3
+SRR957445	SAMN02334479	GSM1215350	2598	1790	SRX339786	6-8 mm from tip of ear primordium	6-8 mm from tip of ear primordium	Ear Primordium 6-8 mm	Ear Primordium 6-8 mm_1
+SRR957446	SAMN02334468	GSM1215351	2313	1589	SRX339787	6-8 mm from tip of ear primordium	6-8 mm from tip of ear primordium	Ear Primordium 6-8 mm	Ear Primordium 6-8 mm_2
+SRR957447	SAMN02334460	GSM1215352	1687	1154	SRX339788	6-8 mm from tip of ear primordium	6-8 mm from tip of ear primordium	Ear Primordium 6-8 mm	Ear Primordium 6-8 mm_3
+SRR957448	SAMN02334480	GSM1215353	2550	1744	SRX339789	2-4 mm from tip of ear primordium	2-4 mm from tip of ear primordium	Ear Primordium 2-4 mm	Ear Primordium 2-4 mm_1
+SRR957449	SAMN02334462	GSM1215354	2590	1776	SRX339790	2-4 mm from tip of ear primordium	2-4 mm from tip of ear primordium	Ear Primordium 2-4 mm	Ear Primordium 2-4 mm_2
+SRR957450	SAMN02334496	GSM1215355	2793	1927	SRX339791	2-4 mm from tip of ear primordium	2-4 mm from tip of ear primordium	Ear Primordium 2-4 mm	Ear Primordium 2-4 mm_3
+SRR957451	SAMN02334507	GSM1215356	2375	1633	SRX339792	Root maturation zone	Root maturation zone	Root - Meristem Zone 5 Days	Root - Meristem Zone 5 Days_1
+SRR957452	SAMN02334494	GSM1215357	2393	1649	SRX339793	Root elongation zone	Root elongation zone	Root - Elongation Zone 5 Days	Root - Elongation Zone 5 Days_1
+SRR957453	SAMN02334498	GSM1215358	2242	1539	SRX339794	Root cortex	Root cortex	Root - Cortex 5 Days	Root - Cortex 5 Days_1
+SRR957454	SAMN02334506	GSM1215359	2520	1718	SRX339795	Root maturation zone	Root maturation zone	Root - Meristem Zone 5 Days	Root - Meristem Zone 5 Days_2
+SRR957455	SAMN02334497	GSM1215360	2019	1393	SRX339796	Root elongation zone	Root elongation zone	Root - Elongation Zone 5 Days	Root - Elongation Zone 5 Days_2
+SRR957456	SAMN02334499	GSM1215361	2271	1550	SRX339797	Root cortex	Root cortex	Root - Cortex 5 Days	Root - Cortex 5 Days_2
+SRR957457	SAMN02334505	GSM1215362	2406	1646	SRX339798	Root maturation zone	Root maturation zone	Root - Meristem Zone 5 Days	Root - Meristem Zone 5 Days_3
+SRR957458	SAMN02334492	GSM1215363	2202	1507	SRX339799	Root elongation zone	Root elongation zone	Root - Elongation Zone 5 Days	Root - Elongation Zone 5 Days_3
+SRR957459	SAMN02334495	GSM1215364	1533	1034	SRX339800	Root cortex	Root cortex	Root - Cortex 5 Days	Root - Cortex 5 Days_3
+SRR957460	SAMN02334504	GSM1215365	2653	1842	SRX339801	Primary root	Primary root	Primary Root 5 Days	Primary Root 5 Days_1
+SRR957461	SAMN02334493	GSM1215366	2512	1741	SRX339802	Primary root	Primary root	Primary Root 5 Days	Primary Root 5 Days_2
+SRR957462	SAMN02334488	GSM1215367	2646	1828	SRX339803	Primary root	Primary root	Primary Root 5 Days	Primary Root 5 Days_3
+SRR957463	SAMN02334503	GSM1215368	2425	1675	SRX339804	Secondary root	Secondary root	Secondary Root 7-8 Days	Secondary Root 7-8 Days_1
+SRR957464	SAMN02334489	GSM1215369	2641	1820	SRX339805	Secondary root	Secondary root	Secondary Root 7-8 Days	Secondary Root 7-8 Days_2
+SRR957465	SAMN02334490	GSM1215370	2815	1933	SRX339806	Secondary root	Secondary root	Secondary Root 7-8 Days	Secondary Root 7-8 Days_3
+SRR957466	SAMN02334502	GSM1215371	2924	2035	SRX339807	Mature pollen	Mature pollen	B73 Mature Pollen	B73 Mature Pollen_1
+SRR957467	SAMN02334487	GSM1215372	2852	1978	SRX339808	Mature pollen	Mature pollen	B73 Mature Pollen	B73 Mature Pollen_2
+SRR957468	SAMN02334491	GSM1215373	2907	2007	SRX339809	Mature pollen	Mature pollen	B73 Mature Pollen	B73 Mature Pollen_3
+SRR957469	SAMN02334500	GSM1215374	2482	1704	SRX339810	silks	silks	Silk	Silk_1
+SRR957470	SAMN02334486	GSM1215375	2083	1411	SRX339811	silks	silks	Silk	Silk_2
+SRR957471	SAMN02334469	GSM1215376	1374	918	SRX339812	silks	silks	Silk	Silk_3
+SRR957472	SAMN02334501	GSM1215377	1691	1123	SRX339813	mature female spikelets	mature female spikelets	Female Spikelet Collected on day as silk	Female Spikelet Collected on day as silk_1
+SRR957473	SAMN02334485	GSM1215378	1968	1326	SRX339814	mature female spikelets	mature female spikelets	Female Spikelet Collected on day as silk	Female Spikelet Collected on day as silk_2
+SRR957474	SAMN02334461	GSM1215379	2206	1502	SRX339815	mature female spikelets	mature female spikelets	Female Spikelet Collected on day as silk	Female Spikelet Collected on day as silk_3
+SRR957475	SAMN02334481	GSM1215380	2436	1653	SRX339816	Internode 6-7	Internode 6-7	6-7 internode	6-7 internode_1
+SRR957476	SAMN02334454	GSM1215381	2344	1595	SRX339817	Internode 6-7	Internode 6-7	6-7 internode	6-7 internode_2
+SRR957477	SAMN02334459	GSM1215382	2569	1752	SRX339818	Internode 6-7	Internode 6-7	6-7 internode	6-7 internode_3
+SRR957478	SAMN02334470	GSM1215383	2372	1611	SRX339819	Internode 7-8	Internode 7-8	7-8 internode	7-8 internode_1
+SRR957479	SAMN02334455	GSM1215384	2138	1452	SRX339820	Internode 7-8	Internode 7-8	7-8 internode	7-8 internode_2
+SRR957480	SAMN02334464	GSM1215385	2645	1800	SRX339821	Internode 7-8	Internode 7-8	7-8 internode	7-8 internode_3
+SRR957481	SAMN02334472	GSM1215386	2660	1794	SRX339822	Vegetative Meristem & Surrounding Tissue	Vegetative Meristem & Surrounding Tissue	Vegetative Meristem 16-19 Day	Vegetative Meristem 16-19 Day_1
+SRR957482	SAMN02334456	GSM1215387	2677	1814	SRX339823	Vegetative Meristem & Surrounding Tissue	Vegetative Meristem & Surrounding Tissue	Vegetative Meristem 16-19 Day	Vegetative Meristem 16-19 Day_2

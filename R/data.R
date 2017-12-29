@@ -59,3 +59,27 @@
 #'
 #' @format A data frame with 32193 rows and 80 variables.
 "maize.kaeppler.expression"
+
+#' Expression data describing in the paper published by Walley 2016 PMID: 27540173
+#'
+#' This expression data was remapped to the B73 v4.37 assembly using STAR.  It is available as FPKM values.
+#'
+#' @docType data
+#' @usage data(maize.walley.v4mapped.expression.replicate)
+#' @keywords datasets
+#'
+#' @format A data frame with 32175 rows and 69 variables.
+"maize.walley.v4mapped.expression.replicate"
+
+#' Expression data describing in the paper published by Walley 2016 PMID: 27540173
+#'
+#' This expression data was remapped to the B73 v4.37 assembly using STAR.  It is available as FPKM values.
+#' Replicates have been merged by taking the average of the 3 (except for one sample with only 2 replicates).
+#' SRA Accessions have been replaced with the tissue sample used and are under the column "Sample".
+#'
+#' @docType data
+#' @usage data(maize.walley.v4mapped.expression)
+#' @keywords datasets
+#'
+#' @format A data frame in long format.
+"maize.walley.v4mapped.expression"

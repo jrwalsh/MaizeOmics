@@ -148,6 +148,34 @@ maize.kaeppler.expression <-
 maize.kaeppler.expression$FPKM_avg[is.nan(maize.kaeppler.expression$FPKM_avg)] <- NA
 
 #==================================================================================================#
+## maize.walley.v4mapped.expression.replicate
+#--------------------------------------------------------------------------------------------------#
+maize.walley.v4mapped.expression.replicate <- maize.walley.v4mapped.expression.clean
+
+## Rename columns based on SRA accession
+maize.walley.v4mapped.expression.replicate <-
+  setNames(maize.walley.v4mapped.expression.replicate,
+           c("geneID", SRA.accessions$replicate[match(names(maize.walley.v4mapped.expression.replicate[-1]),SRA.accessions$Run)]))
+
+#==================================================================================================#
+## maize.walley.v4mapped.expression
+#--------------------------------------------------------------------------------------------------#
+maize.walley.v4mapped.expression <- maize.walley.v4mapped.expression.clean
+
+## convert to sample names, merge replicates in each sample using mean, and output in long form
+maize.walley.v4mapped.expression <-
+  maize.walley.v4mapped.expression %>%
+  gather("sraAccession", "FPKM",-1) %>%
+  left_join(SRA.accessions, by=c("sraAccession"="Run")) %>%
+  select(geneID, sample, FPKM) %>%
+  group_by(geneID, sample) %>%
+  summarise(FPKM_avg=mean(FPKM, na.rm=TRUE)) %>%
+  arrange(geneID)
+
+## When all replicates have NA, mean returns NaN.  Convert it back to NA.
+maize.walley.v4mapped.expression$FPKM_avg[is.nan(maize.walley.v4mapped.expression$FPKM_avg)] <- NA
+
+#==================================================================================================#
 ## Save the output to /data
 #--------------------------------------------------------------------------------------------------#
 devtools::use_data(maize.walley.expression.replicate, overwrite = TRUE)
@@ -155,6 +183,8 @@ devtools::use_data(maize.walley.expression, overwrite = TRUE)
 devtools::use_data(maize.walley.abundance, overwrite = TRUE)
 devtools::use_data(maize.kaeppler.expression.replicate, overwrite = TRUE)
 devtools::use_data(maize.kaeppler.expression, overwrite = TRUE)
+devtools::use_data(maize.walley.v4mapped.expression.replicate, overwrite = TRUE)
+devtools::use_data(maize.walley.v4mapped.expression, overwrite = TRUE)
 
 devtools::document(roclets=c('rd', 'collate', 'namespace'))
 
