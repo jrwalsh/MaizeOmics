@@ -162,6 +162,17 @@ maize.walley.v4mapped.expression.replicate <-
 #--------------------------------------------------------------------------------------------------#
 maize.walley.v4mapped.expression <- maize.walley.v4mapped.expression.clean
 
+## Count non-NA rows
+maize.walley.v4mapped.expression.repCounts <-
+  maize.walley.v4mapped.expression %>%
+  gather("sraAccession", "FPKM",-1) %>%
+  left_join(SRA.accessions, by=c("sraAccession"="Run")) %>%
+  select(geneID, sample, FPKM) %>%
+  group_by(geneID, sample) %>%
+  subset(!is.na(FPKM)) %>%
+  summarise(rep_counts=n()) %>%
+  arrange(geneID)
+
 ## convert to sample names, merge replicates in each sample using mean, and output in long form
 maize.walley.v4mapped.expression <-
   maize.walley.v4mapped.expression %>%
@@ -169,11 +180,22 @@ maize.walley.v4mapped.expression <-
   left_join(SRA.accessions, by=c("sraAccession"="Run")) %>%
   select(geneID, sample, FPKM) %>%
   group_by(geneID, sample) %>%
-  summarise(FPKM_avg=mean(FPKM, na.rm=TRUE)) %>%
+  # subset(!is.na(FPKM)) %>%
+  # summarise(FPKM_avg=mean(FPKM), FPKM_min=min(FPKM), FPKM_max=max(FPKM), FPKM_sd=sd(FPKM), rep_counts=n()) %>%
+  summarise(FPKM_avg=mean(FPKM, na.rm=TRUE), FPKM_min=min(FPKM, na.rm=TRUE), FPKM_max=max(FPKM, na.rm=TRUE), FPKM_sd=sd(FPKM, na.rm=TRUE)) %>%
   arrange(geneID)
 
-## When all replicates have NA, mean returns NaN.  Convert it back to NA.
+## Add counts of non-NA rows back into data frame and ungroup
+maize.walley.v4mapped.expression <-
+  maize.walley.v4mapped.expression %>%
+  left_join(maize.walley.v4mapped.expression.repCounts, by=c("geneID"="geneID","sample"="sample")) %>%
+  ungroup()
+
+## When all replicates have NA, mean returns NaN. Min/Max/sd can be Inf or NaN. Convert it back to NA.
 maize.walley.v4mapped.expression$FPKM_avg[is.nan(maize.walley.v4mapped.expression$FPKM_avg)] <- NA
+maize.walley.v4mapped.expression$FPKM_min[is.infinite(maize.walley.v4mapped.expression$FPKM_min)] <- NA
+maize.walley.v4mapped.expression$FPKM_max[is.infinite(maize.walley.v4mapped.expression$FPKM_max)] <- NA
+maize.walley.v4mapped.expression$FPKM_sd[is.nan(maize.walley.v4mapped.expression$FPKM_sd)] <- NA
 
 #==================================================================================================#
 ## Save the output to /data
