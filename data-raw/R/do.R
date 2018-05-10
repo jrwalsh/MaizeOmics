@@ -8,6 +8,8 @@
 ##        maize.walley.abundance
 ##        maize.kaeppler.expression.replicate
 ##        maize.kaeppler.expression
+##        maize.walley.v4mapped.expression.replicate
+##        maize.walley.v4mapped.expression
 ##
 ## Date: 2017-09-14
 ## Author: Jesse R. Walsh
@@ -22,21 +24,6 @@ library(dplyr)
 #--------------------------------------------------------------------------------------------------#
 maize.walley.expression.replicate <- maize.walley.expression.clean
 
-## Convert to v4 ids
-# maize.walley.expression.replicate <-
-#   maize.walley.expression.replicate %>%
-#   # inner_join(maize.genes.v3_to_v4_map.clean, by=c("tracking_id" = "v3_id")) %>%
-#   rename(geneID=tracking_id)
-
-# ## Reorder columns
-# maize.walley.expression.replicate <- maize.walley.expression.replicate[,c(70,2:69)]
-
-# ## Merge duplicate rows by adding FPKM values together
-# maize.walley.expression.replicate <-
-#   maize.walley.expression.replicate %>%
-#   group_by(geneID) %>%
-#   summarise_all(funs(sum))
-
 ## Rename columns based on tracking id
 maize.walley.expression.replicate <-
   setNames(maize.walley.expression.replicate,
@@ -46,15 +33,6 @@ maize.walley.expression.replicate <-
 ## maize.walley.expression
 #--------------------------------------------------------------------------------------------------#
 maize.walley.expression <- maize.walley.expression.clean
-
-# ## Convert to v4 ids
-# maize.walley.expression <-
-#   maize.walley.expression %>%
-#   inner_join(maize.genes.v3_to_v4_map.clean, by=c("tracking_id" = "v3_id")) %>%
-#   rename(geneID=v4_id)
-#
-# ## Reorder columns
-# maize.walley.expression <- maize.walley.expression[,c(70,2:69)]
 
 ## convert to sample names, merge replicates in each sample using mean, and output in long form
 maize.walley.expression <-
@@ -75,14 +53,10 @@ maize.walley.expression$FPKM_avg[is.nan(maize.walley.expression$FPKM_avg)] <- NA
 #--------------------------------------------------------------------------------------------------#
 maize.walley.abundance <- maize.walley.abundance.clean
 
-## Convert to v4 ids
+## Rename columns
 maize.walley.abundance <-
   maize.walley.abundance %>%
-  # inner_join(maize.genes.v3_to_v4_map.clean, by=c("v3_id" = "v3_id")) %>%
   rename(geneID=v3_id)
-
-# ## Reorder columns
-# maize.walley.abundance <- maize.walley.abundance[,c(length(maize.walley.abundance),3:length(maize.walley.abundance)-1)]
 
 ## Reduce columns to only the ones comparable to expression data
 colsToKeep <- colnames(maize.walley.abundance) %in% c("geneID",experiment.map.proteins$replicate[!is.na(experiment.map.proteins$expressionSampleName)])
@@ -107,34 +81,20 @@ maize.walley.abundance$dNSAF_avg[is.nan(maize.walley.abundance$dNSAF_avg)] <- NA
 #--------------------------------------------------------------------------------------------------#
 maize.kaeppler.expression.replicate <- maize.kaeppler.expression.clean
 
-## Convert to v4 ids
+## Rename columns
 maize.kaeppler.expression.replicate <-
   maize.kaeppler.expression.replicate %>%
-  # inner_join(maize.genes.v3_to_v4_map.clean, by=c("Maize_AGPv2_gene" = "v3_id")) %>%
   rename(geneID=Maize_AGPv2_gene)
-
-# ## Reorder columns
-# maize.kaeppler.expression.replicate <- maize.kaeppler.expression.replicate[,c(81,2:80)]
-
-# ## Merge duplicate rows by adding FPKM values together
-# maize.kaeppler.expression.replicate <-
-#   maize.kaeppler.expression.replicate %>%
-#   group_by(geneID) %>%
-#   summarise_all(funs(sum))
 
 #==================================================================================================#
 ## maize.kaeppler.expression
 #--------------------------------------------------------------------------------------------------#
 maize.kaeppler.expression <- maize.kaeppler.expression.clean
 
-## Convert to v4 ids
+## Rename columns
 maize.kaeppler.expression <-
   maize.kaeppler.expression %>%
-  # inner_join(maize.genes.v3_to_v4_map.clean, by=c("Maize_AGPv2_gene" = "v3_id")) %>%
   rename(geneID=Maize_AGPv2_gene)
-
-# ## Reorder columns
-# maize.kaeppler.expression <- maize.kaeppler.expression[,c(81,2:80)]
 
 ## Output in long form
 maize.kaeppler.expression <-
