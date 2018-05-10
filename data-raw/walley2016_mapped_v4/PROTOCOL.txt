@@ -1,0 +1,61 @@
+This RNA-seq gene atlas of maize inbred B73 includes 68 distinct samples over 23 tissues with 3 biological 
+replicates per tissue (2 replicates in Vegetative Meristem).  The reads were mapped to B73 RefGen_v4 using STAR.  
+Transcripts were observed from 43,781 genes.  The entire dataset contains 1.35 billion uniquely mapped reads, 
+with an average of 19.9 million uniquely mapped reads per biological replicate. For more information see: Walley JW, 
+Sartor RC, Shen Z, Schmitz RJ, Wu KJ, Urich MA, et al. 2016. Integration of omic networks in a developmental 
+atlas of maize. Science.
+
+Source:
+Data published in Walley 2016
+http://science.sciencemag.org/content/353/6301/814.full
+
+Downloaded SRA Data from SRA:
+https://www.ncbi.nlm.nih.gov/Traces/study/?acc=PRJNA217053
+
+ReAligned to RefSeq_v4:
+wget ftp://ftp.ensemblgenomes.org/pub/release-37/plants/gtf/zea_mays/Zea_mays.AGPv4.37.gtf.gz
+wget ftp://ftp.ensemblgenomes.org/pub/release-37/plants/fasta/zea_mays/dna/Zea_mays.AGPv4.dna.toplevel.fa.gz
+
+Alignment Protocol using STAR - star/gcc/64/2.5.2b, samtools/gcc/64/1.4.1, cufflinks/gcc/64/2.2.1:
+STAR Indexing
+        --runThreadN 10
+        --runMode genomeGenerate
+        --genomeDir ./genomeDir
+        --genomeFastaFiles ./geneModel/sequence/v4.37/Zea_mays.AGPv4.dna.toplevel.fa
+        --sjdbGTFfile ./geneModel/annotations/Zea_mays.AGPv4.37.gtf
+        --sjdbOverhang 100
+
+Trimmomatic Adapter Trimming
+        java -jar /software/apps/trimmomatic/64/0.36/trimmomatic-0.36.jar
+        SE
+        -threads 20
+        -phred33
+        fastq/SRR957415.fastq
+        fastq_trimmed/SRR957415.trimmed.fastq
+        ILLUMINACLIP:/software/apps/trimmomatic/64/0.36/adapters/TruSeq3-SE.fa:2:30:10
+        TRAILING:3
+        MINLEN:36
+
+STAR Mapping/Alignment
+        --runThreadN 40
+        --runMode alignReads
+        --genomeDir ./genomeDir/
+        --genomeLoad LoadAndKeep
+        --readFilesIn ./rnaSeq/fastq_trimmed/SRR957415.fastq
+        --quantMode GeneCounts
+        --outFileNamePrefix ./mappingOutput/SRR957415/
+
+SamTools Sort
+        samtools sort
+        -O bam
+        -o ./mappingOutput/SRR957415/Aligned.sortedByCoord.out.bam
+        ./mappingOutput/SRR957415/Aligned.out.sam
+
+Cufflinks Count FPKM
+        cufflinks
+        --no-update-check
+        --library-type fr-firststrand
+        -p 40
+        --GTF ./geneModel/annotations/Zea_mays.AGPv4.37.gtf
+        -o ./mappingOutput/SRR957415/
+        ./mappingOutput/SRR957415/Aligned.sortedByCoord.out.bam
