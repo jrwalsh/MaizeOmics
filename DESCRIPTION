@@ -1,7 +1,7 @@
 Package: MaizeOmics
 Type: Package
 Title: Container for Maize Expression and Protein Abundance Data
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: person("Jesse", "Walsh", email = "jesse@iastate.edu", role = c("aut","cre"))
 Description: This is a collection of useful public maize datasets.
 Imports: readr, readxl, tidyr, dplyr
