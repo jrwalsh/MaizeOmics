@@ -71,7 +71,8 @@ maize.walley.abundance <-
   group_by(geneID, expressionSampleName) %>%
   summarise(dNSAF_avg=mean(dNSAF, na.rm=TRUE)) %>%
   rename(sample=expressionSampleName) %>%
-  arrange(geneID)
+  arrange(geneID) %>%
+  ungroup()
 
 ## When all replicates have NA, mean returns NaN.  Convert it back to NA.
 maize.walley.abundance$dNSAF_avg[is.nan(maize.walley.abundance$dNSAF_avg)] <- NA

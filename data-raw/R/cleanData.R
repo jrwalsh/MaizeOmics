@@ -71,7 +71,7 @@ maize.walley.v4mapped.expression.clean <-
   group_by(geneID) %>%
   summarise_all(funs())
 
-for (id in seq(481, 415)) {
+for (id in seq(482, 415)) {
   maize.walley.v4mapped.expression.clean <-
     get(paste0("maize.walley.v4mapped.expression.SRR957", id, ".raw")) %>%
     subset(FPKM_status == "OK" & startsWith(tracking_id, "Zm")) %>%
